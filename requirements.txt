@@ -1,0 +1,7 @@
+motor
+psutil
+uvloop
+tgcrypto 
+dnspython
+pyrogram~=2.0.59
+https://github.com/Ns-AnoNymouS/pyromod/archive/refs/heads/master.zip
