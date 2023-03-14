@@ -6,7 +6,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 async def start(client, message):
     try:
         start_buttons = [[
-                 InlineKeyboardButton('⚙️ Updates Channel ⚙️', url='https://t.me/+hW2QCj_7_tJhOTll'),
+                 InlineKeyboardButton('JugaadLife™- Never pay full🛍️', url='https://t.me/+Mc_rMtgzQrgzNGJl'),
             ]
         ]
         markup = InlineKeyboardMarkup(start_buttons)
