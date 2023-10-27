@@ -43,14 +43,14 @@ async def get_channel(client, message):
                     text += "Available formattings:\n"
                     text += "- `{name}` - users name.\n"
                     text += "- `{chat}` - chat title.\n"
-                    welcome = await client.ask(message.chat.id, text)
+                    welcome = await message.chat.ask(text)
                     text = "Now send the button to be added in the format show below. "
                     text += "Use /pass if you dont want to add buttons\n\n"
                     text += "For adding buttons in same row\n"
                     text += "`button1 - https://t.me/ | button2 - https://t.me/`\n\n"
                     text += "For adding buttons in different rows\n"
                     text += "`button1 - https://t.me/ \n button2 - https://t.me/`\n\n"
-                    buttons = await client.ask(message.chat.id, text)
+                    buttons = await message.chat.ask(text)
                     try:
                         markup = await string_to_buttons(buttons.text)
                     except Exception as e:
