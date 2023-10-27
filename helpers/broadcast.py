@@ -79,7 +79,7 @@ async def broadcast_handler(c, m):
     if broadcast_ids.get(broadcast_id):
         broadcast_ids.pop(broadcast_id)
     completed_in = datetime.timedelta(seconds=int(time.time() - start_time))
-    await asyncio.sleep(3)
+    await asyncio.sleep(0.5)
     await out.delete()
     log_file.write(broadcast_log.encode())
     if failed == 0:
