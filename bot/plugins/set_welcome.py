@@ -65,7 +65,7 @@ async def get_channel(client, message):
                 text = "You haven't made me as an admin in your group or channel. Please make me admin and try again later."
             except Exception as e:
                 log.exception(e)
-                text = "Something went wrong"
+                text = f"Something went wrong: {e}"
     else:
         text = not_correct_format
     await message.reply(text, quote=True)
