@@ -1,7 +1,6 @@
 import logging
 log = logging.getLogger(__name__)
 
-from ..config import Config
 from pyrogram import Client, filters, enums
 from helpers.str_to_buttons import string_to_buttons
 from pyrogram.errors import (
@@ -38,7 +37,8 @@ async def get_channel(client, message):
             text = not_correct_format
         else:
             try:
-                if message.from_user.id in Config.owner or (await client.get_chat_member(channel_id, message.from_user.id)).status in [enums.ChatMemberStatus.OWNER, enums.ChatMemberStatus.ADMINISTRATOR]: 
+                user = await client.get_chat_member(channel_id, message.from_user.id)
+                if user.status in [enums.ChatMemberStatus.OWNER, enums.ChatMemberStatus.ADMINISTRATOR]: 
                     text = "Enter the welcome message you want the new approved members to receive.\n\n"
                     text += "Available formattings:\n"
                     text += "- `{name}` - users name.\n"
